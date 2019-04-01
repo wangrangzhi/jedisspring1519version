@@ -1,0 +1,57 @@
+
+
+feign:
+  okhttp:
+    enable: true
+
+server:
+  port: 20009
+  tomcat:
+    maxHttpHeaderSize: 10240
+
+spring:
+  feign:
+    httpclient:
+      enable: false
+
+  application:
+    name: helloredisaop
+
+
+  sleuth:
+    #traceId128: true
+    sampler:
+      probability: 1.0
+    log:
+      json:
+        enabled: true
+    feign:
+      enabled: true
+      processor:
+        enabled: true
+
+  redis:
+    database: 11
+    host: 192.168.43.2
+    port: 6379
+
+
+
+
+
+
+
+
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone:  http://eureka.didispace.com/eureka/
+
+debug: true
+#trace: true
+
+
